@@ -1,9 +1,10 @@
 # main links
 main:
   - title: "About"
-    url: https://jerepe.github.io/about/
-  - categories:
-    url: https://jerepe.github.io/categories
+    url: /about
+  - categories: "Categories:"
+    url: /categories
+
   # - title: "Sample Posts"
   #   url: /year-archive/
   # - title: "Sample Collections"
