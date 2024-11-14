@@ -5,12 +5,12 @@ search: false
 
 @charset "utf-8";
 
-$highlight-text-color: light-blue;
+$highlight-text-color: yellow;
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
 // Change the color of all h1 tags to blue
 h1 {
-  color: light-blue;
+  color: red;
 }
