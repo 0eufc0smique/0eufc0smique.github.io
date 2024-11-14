@@ -14,3 +14,9 @@ $highlight-text-color: #00afff;
 h1 {
   color: red;
 }
+
+// Change the color of the post title
+.page__title,
+.post-title {
+  color: red;
+}
