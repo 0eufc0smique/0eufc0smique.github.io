@@ -10,11 +10,6 @@ $highlight-text-color: light-blue;
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
-// Target code elements within the main content area
-.entry-content code {
-  color: green;
-}
-
 // Change the color of all h1 tags to blue
 h1 {
   color: light-blue;
