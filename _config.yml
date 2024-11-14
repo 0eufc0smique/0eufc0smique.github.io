@@ -20,11 +20,11 @@ rtl                      : # true, false (default) # turns direction of the page
 title                    : "Let's dig!"
 title_separator          : "-"
 subtitle                 : "Binary exploitation & reverse"
-name                     : "c0smic3gg"
+name                     : "0eufc0smique"
 description              : "Blogs related to low level stuff, mostly binary exploitation and reverse engineering"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "/" # the subpath of your site, e.g. "/blog"
-repository               : "jerepe/jerepe.github.io/"
+repository               : "0eufc0smique/0eufc0smique.github.io/"
 teaser                   : "https://i.ibb.co/HYG8KmT/binary-locker.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
@@ -90,7 +90,7 @@ baidu_site_verification  :
 
 # Social Sharing
 twitter:
-  username               : "c0smic3gg"
+  username               : "0eufc0smique"
 facebook:
   username               :
   app_id                 :
@@ -113,7 +113,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "c0smic3gg"
+  name             : "0eufc0smique"
   avatar           : "https://i.ibb.co/HYG8KmT/binary-locker.png"
   bio              : "I love to explore!"
   location         : "127.0.0.1"
@@ -127,13 +127,13 @@ author:
       # url: "https://your-website.com"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/c0smic3gg"
+      url: "https://twitter.com/0eufc0smique"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
       # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/jerepe"
+      url: "https://github.com/0eufc0smique"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
@@ -143,13 +143,13 @@ footer:
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/c0smic3gg"
+      url: "https://twitter.com/0eufc0smique"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
       # url:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/jerepe"
+      url: "https://github.com/0eufc0smique"
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
