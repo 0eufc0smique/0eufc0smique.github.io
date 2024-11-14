@@ -17,7 +17,7 @@ minimal_mistakes_skin    : "dark" #, "air", "aqua", "contrast", , "dirt", "neon"
 # Site Settings
 locale                   : "en-US"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
-title                    : "c0smic3gg - Let's dig!"
+title                    : "Let's dig!"
 title_separator          : "-"
 subtitle                 : "Binary exploitation & reverse"
 name                     : "c0smic3gg"
