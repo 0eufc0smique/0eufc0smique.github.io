@@ -10,10 +10,6 @@ $highlight-text-color: light-blue;
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
-// Change the color of inline code elements to blue
-code {
-  color: blue;
-}
 // Target code elements within the main content area
 .entry-content code {
   color: green;
