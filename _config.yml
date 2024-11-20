@@ -19,7 +19,7 @@ locale                   : "en-US"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
 title                    : "Let's dig!"
 title_separator          : "-"
-subtitle                 : "Binary exploitation & reverse engineering"
+subtitle                 : "Binary exploitation - reverse engineering - dev"
 name                     : "0eufc0smique"
 description              : "Blogs related to low level stuff, mostly binary exploitation and reverse engineering"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
@@ -115,7 +115,7 @@ analytics:
 author:
   name             : "0eufc0smique"
   avatar           : "https://i.ibb.co/HYG8KmT/binary-locker.png"
-  bio              : "I love to explore!"
+  bio              : ""
   location         : "127.0.0.1"
   email            : 
   links:
