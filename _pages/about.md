@@ -1,6 +1,8 @@
 ---
 permalink: '/about'
 title: 'About'
+author_profile: true
+classes: wide
 ---
 
 I'm **Jeremy Perreau**, a Rust developer working on async services, IoT messaging, and distributed systems.
@@ -14,5 +16,5 @@ I'm also finishing an RNCP-7 (Bac+5) program in cybersecurity at École 2600, wh
 Get in touch:
 
 - 📧 [cupped-good-outer@duck.com](mailto:cupped-good-outer@duck.com)
-- 💼 [LinkedIn](https://www.linkedin.com/in/jeremyperreau/)
-- 🐙 [GitHub](https://github.com/0eufc0smique)
+- <i class="fab fa-linkedin"></i> [LinkedIn](https://www.linkedin.com/in/jeremyperreau/)
+- <i class="fab fa-github"></i> [GitHub](https://github.com/0eufc0smique)
