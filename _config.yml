@@ -19,9 +19,9 @@ locale                   : "en-US"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
 title                    : "Let's dig!"
 title_separator          : "-"
-subtitle                 : "Binary exploitation - reverse engineering - dev"
-name                     : "0eufc0smique"
-description              : "Blogs related to low level stuff, mostly binary exploitation and reverse engineering"
+subtitle                 : "Rust, async, IoT, and some low-level security on the side"
+name                     : "Jeremy Perreau"
+description              : "Rust, async runtimes, IoT messaging, and low-level security writeups by Jeremy Perreau."
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "/" # the subpath of your site, e.g. "/blog"
 repository               : "0eufc0smique/0eufc0smique.github.io/"
@@ -113,27 +113,30 @@ analytics:
 
 # Site Author
 author:
-  name             : "0eufc0smique"
+  name             : "Jeremy Perreau"
   avatar           : "https://i.ibb.co/HYG8KmT/binary-locker.png"
-  bio              : ""
-  location         : "127.0.0.1"
-  email            : 
+  bio              : "Rust developer (IoT, async, NATS). RNCP-7 cybersecurity. EN/FR."
+  location         : "France · Open to remote"
+  email            :
   links:
-    - label: ""
+    - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      # url: "mailto:your.name@email.com"
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      # url: "https://your-website.com"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/0eufc0smique"
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
-      # url: "https://facebook.com/"
+      url: "mailto:cupped-good-outer@duck.com"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/jeremyperreau/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/0eufc0smique"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/0eufc0smique"
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      # url: "https://your-website.com"
+    - label: "Facebook"
+      icon: "fab fa-fw fa-facebook-square"
+      # url: "https://facebook.com/"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
@@ -141,24 +144,18 @@ author:
 # Site Footer
 footer:
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/0eufc0smique"
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
-      # url:
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/jeremyperreau/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/0eufc0smique"
-    - label: "GitLab"
-      icon: "fab fa-fw fa-gitlab"
-      # url:
-    - label: "Bitbucket"
-      icon: "fab fa-fw fa-bitbucket"
-      # url:
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      # url:
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/0eufc0smique"
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:cupped-good-outer@duck.com"
 
 
 
