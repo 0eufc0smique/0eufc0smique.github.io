@@ -79,7 +79,7 @@
       text-align: center;
       text-decoration: none;
       color: $muted-text-color;
-      border: 1px solid mix(#000, $border-color, 25%);
+      border: 1px solid color-mix(in srgb, #000 25%, #{$border-color});
       border-radius: 0;
 
       &:hover {
@@ -93,7 +93,7 @@
       }
 
       &.disabled {
-        color: rgba($muted-text-color, 0.5);
+        color: color-mix(in srgb, #{$muted-text-color} 50%, transparent);
         pointer-events: none;
         cursor: not-allowed;
       }
@@ -128,11 +128,15 @@
     text-align: center;
     text-decoration: none;
     color: $muted-text-color;
-    border: 1px solid mix(#000, $border-color, 25%);
+    border: 1px solid color-mix(in srgb, #000 25%, #{$border-color});
     border-radius: $border-radius;
 
     &:hover {
-      @include yiq-contrasted($muted-text-color);
+      /* runtime-themed equivalent of yiq-contrasted($muted-text-color):
+         the page background is the high-contrast "inverse" of muted text in
+         both palettes (light muted -> dark page bg, dark muted -> light page bg) */
+      background-color: $muted-text-color;
+      color: $background-color;
     }
 
     &:first-child {
@@ -147,7 +151,7 @@
     }
 
     &.disabled {
-      color: rgba($muted-text-color, 0.5);
+      color: color-mix(in srgb, #{$muted-text-color} 50%, transparent);
       pointer-events: none;
       cursor: not-allowed;
     }
@@ -520,7 +524,11 @@
 
   // Scrollspy marks toc items as .active when they are in focus
   .active a {
-    @include yiq-contrasted($active-color);
+    /* runtime-themed equivalent of yiq-contrasted($active-color): the active
+       tint is light in both palettes, so dark text is correct either way
+       (matches the original yiq dark-default of $dark-gray) */
+    background-color: $active-color;
+    color: $dark-gray;
   }
 }
 

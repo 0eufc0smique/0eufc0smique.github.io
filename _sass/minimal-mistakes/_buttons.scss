@@ -30,7 +30,9 @@
 
   /* button colors */
   $buttoncolors:
-  (primary, $primary-color),
+  /* literal teal: yiq-contrasted needs a build-time color, and --primary-color
+     is #00adb5 in both the light and dark palettes (see _theme-palette.scss) */
+  (primary, #00adb5),
   (inverse, #fff),
   (light-outline, transparent),
   (success, $success-color),

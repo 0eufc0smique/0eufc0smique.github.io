@@ -7,16 +7,87 @@ search: false
 
 $highlight-text-color: #00afff;
 
-@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
-@import "minimal-mistakes"; // main partials
+@import "custom/theme-palette"; // light/dark palettes as CSS custom properties
+@import "custom/theme-bridge"; // route MM's Sass color vars through them
+@import "minimal-mistakes"; // main partials (now compile to var(--…))
 
-// Change the color of all h1 tags to blue
+// Change the color of all h1 tags (theme-aware)
 h1 {
-  color: #FF643C;
+  color: var(--heading-color);
 }
 
-// Change the color of the post title
+// Change the color of the post title (theme-aware)
 .page__title,
 .post-title {
-  color: red;
+  color: var(--title-color);
+}
+
+/* ==========================================================================
+   Color theme toggle button (light / dark switch in the masthead)
+   ========================================================================== */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline: 0.25rem 0.5rem;
+  height: $nav-toggle-height;
+  width: $nav-toggle-height;
+  padding: 0;
+  border: 0;
+  outline: none;
+  color: $masthead-link-color;
+  background-color: transparent;
+  font-size: 1em;
+  line-height: 1;
+  cursor: pointer;
+  -webkit-transition: color 0.2s ease, transform 0.2s ease;
+  transition: color 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    color: $primary-color;
+    transform: scale(1.12);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $focus-color;
+    outline-offset: 2px;
+    border-radius: $border-radius;
+  }
+
+  i {
+    pointer-events: none;
+  }
+
+  // Default / dark theme -> show the sun ("switch to light").
+  // Light theme -> show the moon ("switch to dark"). JS sets the class;
+  // the sun is the no-JS fallback so an icon always renders.
+  .theme-toggle__moon {
+    display: none;
+  }
+
+  &.theme-toggle--light {
+    .theme-toggle__sun {
+      display: none;
+    }
+    .theme-toggle__moon {
+      display: inline-block;
+    }
+  }
+}
+
+/* Smooth cross-fade when the palette changes (respects reduced-motion) */
+@media (prefers-reduced-motion: no-preference) {
+  body,
+  input,
+  textarea,
+  select,
+  button,
+  .masthead,
+  .page__footer,
+  .sidebar {
+    -webkit-transition: background-color 0.25s ease, color 0.25s ease,
+      border-color 0.25s ease;
+    transition: background-color 0.25s ease, color 0.25s ease,
+      border-color 0.25s ease;
+  }
 }

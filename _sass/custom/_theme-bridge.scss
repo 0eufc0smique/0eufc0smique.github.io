@@ -1,0 +1,62 @@
+/* ==========================================================================
+   Theme bridge
+   --------------------------------------------------------------------------
+   Re-point Minimal Mistakes' Sass color variables at the CSS custom
+   properties defined in `_theme-palette.scss`. Because this file is imported
+   *before* the theme's `_variables.scss`, these assignments win over the
+   `!default` color values there, and every partial that uses a palette color
+   compiles to `var(--…)` — making the whole theme switchable at runtime.
+
+   NOTE: this is why a handful of compile-time `mix()` / `rgba()` calls in the
+   partials had to become CSS `color-mix()` — Sass color functions cannot
+   operate on a `var(--…)` value. Non-palette colors (brand colors, the
+   status colors used by buttons/notices, literal #000/#fff) are left alone.
+   ========================================================================== */
+
+/* Surfaces & text */
+$background-color: var(--background-color);
+$text-color: var(--text-color);
+$muted-text-color: var(--muted-text-color);
+$border-color: var(--border-color);
+$code-background-color: var(--code-background-color);
+$code-background-color-dark: var(--code-background-color-dark);
+$form-background-color: var(--form-background-color);
+$footer-background-color: var(--footer-background-color);
+
+/* Accent */
+$primary-color: var(--primary-color);
+$active-color: var(--active-color);
+$focus-color: var(--focus-color);
+
+/* Links & masthead */
+$link-color: var(--link-color);
+$link-color-hover: var(--link-color-hover);
+$link-color-visited: var(--link-color-visited);
+$masthead-link-color: var(--masthead-link-color);
+$masthead-link-color-hover: var(--masthead-link-color-hover);
+$navicon-link-color-hover: var(--navicon-link-color-hover);
+
+/* Greys */
+$gray: var(--gray);
+$dark-gray: var(--dark-gray);
+$darker-gray: var(--darker-gray);
+$light-gray: var(--light-gray);
+$lighter-gray: var(--lighter-gray);
+
+/* Syntax highlighting (base16) */
+$base00: var(--base00);
+$base01: var(--base01);
+$base02: var(--base02);
+$base03: var(--base03);
+$base04: var(--base04);
+$base05: var(--base05);
+$base06: var(--base06);
+$base07: var(--base07);
+$base08: var(--base08);
+$base09: var(--base09);
+$base0a: var(--base0a);
+$base0b: var(--base0b);
+$base0c: var(--base0c);
+$base0d: var(--base0d);
+$base0e: var(--base0e);
+$base0f: var(--base0f);

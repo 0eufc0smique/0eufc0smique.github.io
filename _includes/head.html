@@ -15,6 +15,15 @@
   {% if site.enable_copy_code_button -%}
     window.enable_copy_code_button = true;
   {%- endif %}
+  // Apply a saved color-theme preference before first paint (no flash of the
+  // wrong theme). With no saved preference, CSS (prefers-color-scheme) lets the
+  // palette follow the visitor's operating system.
+  try {
+    var __theme = localStorage.getItem('theme');
+    if (__theme === 'light' || __theme === 'dark') {
+      document.documentElement.setAttribute('data-theme', __theme);
+    }
+  } catch (e) {}
 </script>
 
 <!-- For all browsers -->
@@ -27,3 +36,48 @@
     <script src="{{ script | relative_url }}"></script>
   {% endfor %}
 {% endif %}
+
+<script>
+  // Color-theme toggle: wires the masthead button, persists the choice, and
+  // keeps the button icon in sync. The actual palette swap is pure CSS
+  // (custom properties keyed off <html data-theme>); this only flips the flag.
+  (function () {
+    var root = document.documentElement;
+    var mq = window.matchMedia('(prefers-color-scheme: dark)');
+
+    function effectiveTheme() {
+      var t = root.getAttribute('data-theme');
+      if (t === 'light' || t === 'dark') return t;
+      return mq.matches ? 'dark' : 'light';
+    }
+
+    function syncButton(btn) {
+      var t = effectiveTheme();
+      btn.classList.toggle('theme-toggle--light', t === 'light');
+      btn.classList.toggle('theme-toggle--dark', t === 'dark');
+      btn.setAttribute('aria-pressed', String(t === 'dark'));
+      btn.setAttribute('aria-label', t === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+    }
+
+    function init() {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      syncButton(btn);
+      btn.addEventListener('click', function () {
+        var next = effectiveTheme() === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        try { localStorage.setItem('theme', next); } catch (e) {}
+        syncButton(btn);
+      });
+      // Follow live OS changes only while the visitor hasn't chosen manually.
+      if (mq.addEventListener) {
+        mq.addEventListener('change', function () {
+          if (!root.getAttribute('data-theme')) syncButton(btn);
+        });
+      }
+    }
+
+    if (document.readyState !== 'loading') init();
+    else document.addEventListener('DOMContentLoaded', init);
+  })();
+</script>

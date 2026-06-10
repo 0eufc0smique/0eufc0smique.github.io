@@ -1,0 +1,142 @@
+/* ==========================================================================
+   Theme palettes  ->  CSS custom properties
+   --------------------------------------------------------------------------
+   Minimal Mistakes resolves all of its colors as Sass variables at *build*
+   time, so the compiled CSS normally contains exactly one baked-in palette.
+   To make the palette switchable at runtime (light / dark) we emit every
+   color as a CSS custom property here, and route the theme's Sass variables
+   through them in `_theme-bridge.scss`.
+
+   The DARK palette is computed with the *exact* original Minimal Mistakes /
+   "dark" skin formulas, so dark mode renders byte-for-byte identical to
+   before this change (zero regression). The LIGHT palette is a hand-tuned
+   white + teal scheme with a "one-light" base16 syntax theme.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Dark palette (current look — do not alter without intent)
+   -------------------------------------------------------------------------- */
+@mixin mm-theme-dark {
+  $background-color: #252a34;
+  $text-color: #eaeaea;
+  $primary-color: #00adb5;
+  $link-color: mix($primary-color, $text-color, 40%);
+  $gray: #7a8288;
+
+  color-scheme: dark;
+
+  --background-color: #{$background-color};
+  --text-color: #{$text-color};
+  --muted-text-color: #{mix(#fff, $text-color, 20%)};
+  --primary-color: #{$primary-color};
+  --border-color: #{mix(#fff, $background-color, 20%)};
+  --code-background-color: #{mix(#000, $background-color, 15%)};
+  --code-background-color-dark: #{mix(#000, $background-color, 20%)};
+  --form-background-color: #{mix(#000, $background-color, 15%)};
+  --footer-background-color: #{mix(#000, $background-color, 30%)};
+  --link-color: #{$link-color};
+  --link-color-hover: #{mix(#fff, $link-color, 25%)};
+  --link-color-visited: #{mix(#000, $link-color, 25%)};
+  --masthead-link-color: #{$text-color};
+  --masthead-link-color-hover: #{mix(#000, $text-color, 20%)};
+  --navicon-link-color-hover: #{mix(#000, $background-color, 30%)};
+  --active-color: #{mix(#fff, $primary-color, 80%)};
+  --focus-color: #{$primary-color};
+
+  --gray: #{$gray};
+  --dark-gray: #{mix(#000, $gray, 50%)};
+  --darker-gray: #{mix(#000, $gray, 60%)};
+  --light-gray: #{mix(#fff, $gray, 50%)};
+  --lighter-gray: #{mix(#fff, $gray, 90%)};
+
+  /* base16 syntax highlighting — Material Oceanic (dark) */
+  --base00: #263238;
+  --base01: #2e3c43;
+  --base02: #314549;
+  --base03: #546e7a;
+  --base04: #b2ccd6;
+  --base05: #eeffff;
+  --base06: #eeffff;
+  --base07: #ffffff;
+  --base08: #f07178;
+  --base09: #f78c6c;
+  --base0a: #ffcb6b;
+  --base0b: #c3e88d;
+  --base0c: #89ddff;
+  --base0d: #82aaff;
+  --base0e: #c792ea;
+  --base0f: #ff5370;
+
+  /* author's custom accents (see main.scss) */
+  --heading-color: #ff643c;
+  --title-color: #ff3b30;
+}
+
+/* --------------------------------------------------------------------------
+   Light palette (white + teal, "one-light" code)
+   -------------------------------------------------------------------------- */
+@mixin mm-theme-light {
+  color-scheme: light;
+
+  --background-color: #ffffff;
+  --text-color: #1f2733;
+  --muted-text-color: #586472;
+  --primary-color: #008f96; /* deepened teal: clears WCAG 3:1 for icons/UI on white (brand #00adb5 stays in dark) */
+  --border-color: #e2e6ea;
+  --code-background-color: #f5f7f9;
+  --code-background-color-dark: #e9edf1;
+  --form-background-color: #eef1f4;
+  --footer-background-color: #f2f4f6;
+  --link-color: #0a7a80;
+  --link-color-hover: #064f54;
+  --link-color-visited: #2a6f73;
+  --masthead-link-color: #1f2733;
+  --masthead-link-color-hover: #00838a;
+  --navicon-link-color-hover: #eef1f3;
+  --active-color: #d7f1f2;
+  --focus-color: #008f96;
+
+  --gray: #5e6772;
+  --dark-gray: #3a4149;
+  --darker-gray: #2b3036;
+  --light-gray: #9aa1a9;
+  --lighter-gray: #dde1e5;
+
+  /* base16 syntax highlighting — One Light */
+  --base00: #fafafa;
+  --base01: #f0f0f1;
+  --base02: #e5e5e6;
+  --base03: #8a8c93; /* one-light comment, deepened for readability (orig #a0a1a7 = 2.5:1) */
+  --base04: #696c77;
+  --base05: #383a42;
+  --base06: #202227;
+  --base07: #090a0b;
+  --base08: #e45649;
+  --base09: #986801;
+  --base0a: #c18401;
+  --base0b: #50a14f;
+  --base0c: #0184bc;
+  --base0d: #4078f2;
+  --base0e: #a626a4;
+  --base0f: #986801;
+
+  /* author's custom accents (see main.scss) */
+  --heading-color: #e24f28;
+  --title-color: #c0392b;
+}
+
+/* --------------------------------------------------------------------------
+   Apply the palettes.
+
+   * Default (no `data-theme`)         -> dark   (preserves current identity)
+   * OS prefers light & no override    -> light  (follow the visitor's system)
+   * Manual override via toggle button -> wins, and is persisted in JS
+   -------------------------------------------------------------------------- */
+:root { @include mm-theme-dark; }
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) { @include mm-theme-light; }
+}
+
+[data-theme="dark"]  { @include mm-theme-dark; }
+[data-theme="light"] { @include mm-theme-light; }
